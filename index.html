@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Mercy</title>
+    <link rel="icon" type="image/vnd.icon" href="img/cmercy.ico">
+    <link rel="stylesheet" href="style.css">  
+    <meta name="google-site-verification" content="PfqY9vWlBKza1s4f5lu9paTkG-Vyp67Xf7fW0ADoKGc" />
+
+    <link rel="preload" href="https://www.gstatic.com"/>
+    <link rel="preload" href="https://fonts.googleapis.com"/>
+    <link rel="preload" href="https://maps.googleapis.com"/>
+<!-- 
+    <link rel="dns-prefetch" href="https://www.gstatic.com"/>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+    <link rel="dns-prefetch" href="https://maps.googleapis.com"/> -->
+    <!-- <link rel="stylesheet" href="node_modules/animate.css/animate.min.css"/>  -->
+</head>
+
+<body>
+  <header>
+    <div class="navbar bg-base-200">
+      <img src="img/cmercy.webp" alt="Casa Mercy Logo" class="m-0 p-0 object-contain h-20" srcset="img/cmercy.webp" width="209.66px" height="80px" loading="lazy"/>
+    </div>
+  <div class="sm:pt-2 md:grid grid-cols-2">
+  
+      <div id="carouselUp" class="carousel w-full h-full object-cover sm:rounded-box sm:w-4/5 sm:mx-16 md:w-full md:ml-2 pretty-images">
+        <img src="img/cmercy front.webp" alt="Casa Mercy" class="carousel-item imagen-up pt-5 md:pt-6" loading="lazy">
+        <img src="img/1688053142991.webp" alt="Varadero Beach photo" class="carousel-item imagen-up" loading="lazy">
+        <img src="img/1688053142974.webp" alt="Varadero Beach photo" class="carousel-item imagen-up" loading="lazy">      
+        <img src="img/1688053143064.webp" alt="view of the beach from our rooftop" class="carousel-item imagen-up" loading="lazy">
+        <img src="img/1688053143172.webp" alt="photographic viewpoint of Varadero" class="carousel-item imagen-up" loading="lazy">
+        <img src="img/1688053143155.webp" alt="photographic viewpoint of Varadero" class="carousel-item imagen-up" loading="lazy">
+      </div>
+  <div class="fadeInRight text-xl py-4 px-4 text-neutral dark:text-neutral-content md:w-full md:fit-content md:text-2xl md:py-0 md:pt-10 lg:text-3xl lg:py-0 lg:pt-16">
+    <h1>
+      Casa Mercy is an ideal accommodation option in Varadero, situated within 30 
+      meters of one of the world's most beautiful beaches and on the city's premier Avenue.
+    </h1>
+
+    <a href="#reserve" class="hidden lg:block lg:absolute lg:transform lg:translate-y-12 lg:transform lg:translate-x-8">
+      <button class="btn bg-neutral text-base-100 text-2xl dark:bg-info reserve-now">Reserve Your Stay Today!!</button>
+    </a>
+  </div>
+</div> 
+
+<div class="navegacion-por-el-sitio fixed bg-base-300 bottom-0 menu menu-horizontal w-screen rounded-box z-10 sm:transform sm:translate-x-1/4 sm:w-2/3 lg:hidden">
+  
+  <p class="text-xl my-auto font-bold"><b>Reserve Your Stay</b></p>
+  <div class="flex flex-inline mx-auto"></div>
+  <a href="https://wa.me/5352476181">
+      <img src="img/whatsapp blue.png" alt="Send me a message on whatsapp" class="shake-lr sm:mr-4" style="width: 50px;" srcset="img/whatsapp.svg">
+  </a>
+  <a href="mailto:fsegui@nauta.cu">
+    <img src="img/email.png" alt="Send me an email" class="shake-lr sm:mr-4" style="width: 50px;" srcset="img/email.svg"/>
+  </a>
+  </div>
+</div>
+
+    <h2 class="text-3xl font-bold pl-4 pb-5 md:mt-8">Photos</h2>
+    <div class="relative">
+      <div class="hidden sm:w-content sm:z-10 sm:grid sm:grid-cols-2 sm:absolute sm:left-5 sm:right-5 sm:transform sm:translate-y-6 sm:top-1/3 sm:block">
+        <div>
+          <a id="before" class="btn btn-circle bg-base-300 reserve-now">❮</a> 
+        </div>
+        <div class="justify-self-end">
+          <a id="next" class="btn btn-circle bg-base-300 reserve-now">❯</a>
+        </div>
+    </div>
+      <div id="carousel" class="carousel relative rounded-box mx-2 space-x-1 h-max-96">      
+        <div id="image1" class="image carousel-item w-1/2 sm:w-1/3 md:w-1/4">
+            <img src="img/cmercy-entrance.webp" alt="Casa Mercy entrance" class="rounded-box" loading="lazy">
+        </div> 
+        <div class="image carousel-item w-1/2 sm:w-1/3 md:w-1/4">
+            <img src="img/cmercy-hall.webp" alt="Casa Mercy hall" class="rounded-box" loading="lazy">
+        </div> 
+        <div class="image carousel-item w-1/2 sm:w-1/3 md:w-1/4">
+            <img src="img/cmercy-first-room-bathroom.webp" alt="Casa Mercy first room bathroom" class="rounded-box" loading="lazy">
+        </div> 
+        <div class="image carousel-item w-1/2 sm:w-1/3 md:w-1/4">
+            <img src="img/cmercy-first-room-bathroom-shower.webp" alt="Casa Mercy first room bathroom" class="rounded-box" loading="lazy">
+        </div> 
+        <div class="image carousel-item w-1/2 h-34 sm:w-1/3 md:w-1/4">
+            <div>
+              <img src="img/cmercy-first-room-bedroom.webp" alt="Casa Mercy first room bedroom" class="rounded-box" loading="lazy">      
+              <img src="img/cmercy-second-room-bedroom.webp" alt="Casa Mercy second room bathroom" class="pt-1 rounded-box" loading="lazy">
+            </div>
+        </div> 
+        <div class="image carousel-item w-1/2 sm:w-1/3 md:w-1/4">
+            <img src="img/cmercy-second-room-bathroom-shower.webp" alt="Casa Mercy second room bathroom"  class="rounded-box" loading="lazy">
+        </div>
+        <div class="image carousel-item w-1/2 sm:w-1/3 md:w-1/4">
+          <img src="img/cmercy-second-room-bathroom.webp" alt="Casa Mercy second room bathroom"  class="rounded-box" loading="lazy">
+        </div>     
+      </div>
+    </div>  
+                
+    <aside class="contact2 hidden lg:block lg:absolute lg:bg-base-300 lg:right-8 lg:z-10 lg:mt-4" style="border-radius: 25px;">
+        
+      <p class="text-xl my-auto font-bold px-4"><b>Reserve Your Stay</b></p>
+      <div class="flex flex-row px-12">
+        <a href="https://wa.me/5352476181" class="pr-4">
+            <img src="img/whatsapp blue.png" alt="Send me a message on whatsapp" class="shake-lr " style="width: 50px;" srcset="img/whatsapp.svg">
+        </a>
+        <a href="mailto:fsegui@nauta.cu" class="pr-4">
+          <img src="img/email.png" alt="Send me an email" class="shake-lr" style="width: 50px;" srcset="img/email.svg"/>
+        </a>
+      </div>
+    </aside> 
+  
+      <div class="weoffer grid h-full place-items-center text-xl px-4 pt-5" style="max-width: 68ch;">
+        We offer two independent rooms, each with a double and a single bed, accommodating
+        a maximum of three persons per room. Each room features a TV, split air conditioning and fan,
+        refrigerator, closet, safe and a private bathroom with hot water. Stay connected with our 24-hour WiFi,
+        and enjoy exceptional customer service throughhout your stay with us. We also offer daily room cleaning to
+        ensure your stay is always fresh and comfortable.
+      </div> 
+
+      
+
+      <div class="h-32 grid grid-cols-4 p-5 sm:ml-10 mr-0" style="max-width: 68ch;">
+        <div class="bg-bathroom-light dark:bg-bathroom-dark bg-cover py-5 widthclass" title="bathroom icon image"></div>
+        <div class="bg-beach-light dark:bg-beach-dark bg-cover py-5 widthclass" title="beach icon image"></div>
+        <div class="bg-cleaning-light dark:bg-cleaning-dark bg-cover py-5 widthclass" title="cleaning icon image"></div>
+        <div class="bg-closet-light dark:bg-closet-dark bg-cover py-5 widthclass" title="closet icon image"></div>
+        <div class="bg-fridge-light dark:bg-fridge-dark bg-cover py-5 widthclass mt-5" title="fridge icon image"></div>
+        <div class="bg-tv-light dark:bg-tv-dark bg-cover py-5 widthclass mt-5" title="tv icon image"></div>
+        <div class="bg-snowflake-light dark:bg-snowflake-dark bg-cover py-5 widthclass mt-5" title="snowflake icon image"></div>
+        <div class="bg-wifi-light dark:bg-wifi-dark bg-cover py-5 widthclass mt-5" title="wifi icon image"></div>
+      </div>
+
+      <div class="grid h-full place-items-center text-xl px-4 pt-16" style="max-width: 68ch;">
+        Guests can enjoy a breathtaking view of the beach from our rooftop, which is shared by both rooms. We are also
+        conveniently located near several points of interest, including ETECSA, where you can purchase nauta cards for
+        WiFi, the photographic viewpoint of Varadero, and the house of Havano, where you can purchase souvenirs of your visit
+        to this turistic area. Within a radius of less than 100 meters, you will find several restaurants and cafes
+        that have earned their reputation for exceptional offers and customer service, including Don Alex, Salsa Suarez,
+        and El Barco.
+      </div>
+    
+
+    <h2 class="grid h-full text-3xl font-bold px-4 pt-5">Location</h2>
+    
+          <div  id="map-wrapper">
+    <iframe id="map" class="pt-4" src="https://www.google.com/maps/d/embed?mid=1HPqbymPdObGpk-Ok2uLP8IQvepFF8Wo&ehbc=2E312F" width="100%" height="450px" title="cmercy map location" frameborder="0" style="border:0" loading="lazy" allowfullscreen></iframe>
+  </div>
+
+    <p class="grid h-full px-4 text-xl pb-5">Address: Av. 1st / 30 & 31 # 3004, Varadero, Cuba </p>
+    <p class="grid h-full place-items-center px-4 text-xl pb-5" style="max-width: 75ch;">
+      Don't hesitate any longer and contact us directly to reserve your stay at Casa Mercy. You can send us a 
+      message via WhatsApp or email with your desired dates. We look forward to helping you create unforgettable
+      vacation memories in Varadero!
+    </p>
+
+
+    <div id="reserve" class="contact bg-base-300 menu menu-horizontal rounded-box z-10 w-screen sm:transform sm:translate-x-1/4 sm:w-2/3" style="border: solid #37d3fa;"> 
+      <p class="my-auto font-bold text-xl"><b>Reserve Your Stay</b></p>
+      <div class="flex flex-inline mx-auto"></div>
+      <a href="https://wa.me/5352476181">
+          <img src="img/whatsapp blue.png" alt="Send me a message on whatsapp" class="shake-lr sm:mr-4" style="width: 50px;" srcset="img/whatsapp.svg">
+      </a>
+  
+      <a href="mailto:fsegui@nauta.cu">
+        <img src="img/email.png" alt="Send me an email" class="shake-lr sm:mr-4" style="width: 50px;" srcset="img/email.svg"/>
+      </a>
+      </div>
+    </div>
+
+</body>
+
+<footer class="footer bg-base-200 mt-12 footer-cmercy">
+     
+   
+    <div class="items-center grid-flow-col grid-cols-3 ml-5">
+      <a href="https://www.facebook.com/CMercysRoomsVaradero" class="footer-contact pulsate-fwd">
+        <div class="bg-facebook-light dark:bg-facebook-dark bg-cover widthclass"></div>
+        <!-- <img src="img/icons8-facebook-64.png" alt="Facebook Logo"/> -->
+      </a>
+      
+      
+      <a href="https://www.google.com/maps/@23.144172,-81.2702325,19.17z?entry=ttu" class="footer-contact pulsate-fwd">
+        <!-- <img src="img/icons8-mapas-de-google-64.png" alt="Google Maps Logo"/> -->
+        <div class="bg-google-maps-light dark:bg-google-maps-dark bg-cover widthclass"></div>
+      </a>
+    
+      <p class="text-4xs font-bold right-4 text-center fit-content col-span-2 md:absolute">Copyright © 2023 - All right reserved</p>
+    </div> 
+  </footer> 
+
+
+
+  <script>
+ const before = document.getElementById("before");
+ const next = document.getElementById("next");
+ const carousel = document.getElementById("carousel");
+ const carouselImages = document.querySelectorAll(".image");
+ let contador = 1;
+ let positionScroll = 0;
+
+ next.addEventListener("click", (e) => {
+      let carouselWidth = carousel.clientWidth;
+      carousel.scrollLeft += (carouselWidth * contador ) - carousel.scrollLeft;
+
+      if (positionScroll == carousel.scrollLeft && contador!=1) {
+        carousel.scrollLeft = carousel.clientWidth - (carouselImages.length * carousel.clientWidth);
+        contador = 1;
+      }else
+           contador++;
+      
+      positionScroll = carousel.scrollLeft; 
+ })
+
+ before.addEventListener("click", () => {
+  let carouselWidth = carousel.clientWidth;
+  if (contador > 1) {
+       contador--;
+  } else if(contador == 1) {
+    contador = carouselImages.length-3;
+  }
+  carousel.scrollLeft = (carouselWidth * contador) - carouselWidth;
+})
+
+
+
+// Carrusel superior
+const carouselImagesUp = document.querySelectorAll(".imagen-up");
+const carouselUp = document.querySelector(".pretty-images");
+
+let currentImageIndex = 0;
+let intervalId;
+
+function showNextImage() {  
+  carouselImagesUp[currentImageIndex].classList.remove('active');
+  currentImageIndex = (currentImageIndex + 1) % carouselImagesUp.length;
+  
+  carouselImagesUp[currentImageIndex].classList.add('active'); 
+  carouselImagesUp[currentImageIndex].classList.add('blur-in-expand'); 
+}
+
+function startCarousel () {
+  intervalId = setInterval(showNextImage,5000);
+
+}
+
+function stopCarousel () {
+  clearInterval(intervalId);
+}
+
+carouselUp.addEventListener('mouseenter', stopCarousel);
+carouselUp.addEventListener('mouseleave', startCarousel);
+
+carouselImagesUp[currentImageIndex].classList.add('active');
+startCarousel();
+
+
+
+//nav
+window.addEventListener('scroll',
+function () {
+  var footer = document.querySelector('.footer-cmercy');
+  var navegacionFlotante = document.querySelector('.navegacion-por-el-sitio');
+  var footerHeight = footer.offsetHeight;
+  var scrollPosition = window.scrollY + window.innerHeight;
+  var bodyAltura = document.body.offsetHeight;
+  var contact2 = document.querySelector('.contact2');
+ 
+
+  if (scrollPosition >= bodyAltura - 12*footerHeight) {
+    contact2.classList.add('contact2--active');
+  } else {
+    contact2.classList.remove('contact2--active');
+  }
+
+
+  if (scrollPosition >= bodyAltura - 4*footerHeight) {
+    navegacionFlotante.classList.add('navegacion-por-el-sitio--active');
+  } else {
+    navegacionFlotante.classList.remove('navegacion-por-el-sitio--active');
+  }
+
+});
+
+    const mapG = document.getElementById('map-wrapper');
+    const mapDeVerdad =  document.getElementById("map")
+    mapG.addEventListener("click", (e) => {
+   
+      mapDeVerdad.style.pointerEvents = "auto";
+ })
+    mapDeVerdad.addEventListener("mouseleave",(e)=>{
+      mapDeVerdad.style.pointerEvents = "none";
+    })
+  
+  </script>
+</html>
