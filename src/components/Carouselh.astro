@@ -1,0 +1,86 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+   imagePath: string;
+   altText: string;
+   imageId: string;
+   hrefPrev: string;
+   titlePrev: string;
+   hrefNext: string;
+   titleNext: string;
+
+}
+const { imagePath, altText, imageId, hrefPrev, titlePrev, hrefNext, titleNext } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif,webp}');
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
+---
+<div>
+    <div id={imageId} class="modalmask">
+        <div class="modalbox sm:m-auto resize">
+            <div class="w-screen px-6 sm:w-full sm:px-0 relative">
+                <Image class="mt-16" src={images[imagePath]()} alt={altText} loading={'lazy'}/>
+                <a href="#close" title="Close" class="close me-6 sm:me-0">X</a>
+                <a class="absolute ms-2 px-2 rounded-full top-1/2 -translate-y-3/4 text-blue-600 bg-white hover:bg-blue-600 hover:text-white" href={hrefPrev} title={titlePrev}><</a>
+                <a class="absolute me-6 sm:me-1 px-2 rounded-full right-1 top-1/2 -translate-y-3/4 text-blue-600 bg-white hover:bg-blue-600 hover:text-white" href={hrefNext} title={titleNext}>></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    	.modalmask {
+		position: fixed;
+		font-family: Arial, Helvetica, sans-serif;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background: rgba(0,0,0,0.8);
+		z-index: 999;
+		opacity: 0;
+		-webkit-transition: opacity 400ms ease-in;
+		-moz-transition: opacity 400ms ease-in;
+		transition: opacity 400ms ease-in;
+		pointer-events: none;
+	}
+	.modalmask:target {
+		opacity: 1;
+		pointer-events: auto;
+	}
+	.modalbox {
+		width: 80vw;
+		max-width: 80%;
+		position: relative;
+		padding: 0;
+		background:transparent;
+	}
+	.resize {
+		/* margin: 10% auto; */
+		width: 0;
+		height: 0;
+	}
+	.modalmask:target .resize {
+		margin-top: 2vh;
+		width: 55vw;
+		max-width: 90%;
+		height: auto;
+	}
+	.close {
+		background: #710f0c;
+		color:#fff;
+		position: absolute;
+		right: 1px;
+		text-align: center;
+		top: 1px;
+		width: 24px;
+		text-decoration: none;
+		font-weight: bold;
+		border-radius: 3px;
+	}
+	.close:hover {
+		background: #fa5858;
+		color: #222;
+	}
+</style>

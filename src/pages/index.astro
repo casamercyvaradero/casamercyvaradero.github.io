@@ -1,0 +1,525 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Carouselh from '../components/Carouselh.astro';
+import Logo from '../components/Logo.astro';
+import Carouselv from '../components/Carouselv.astro';
+
+---
+
+<Layout title="Casa Mercy">
+
+		<div class="h-16 bg-cyan-50 fixed navbar-up top-0" style="z-index: 3;">
+			<Logo imagePath="/src/assets/logo.png"
+			altText="Casa Mercy Logo"
+			/>
+			<div class="relative flex flex-end bottom-1/2 pe-6 justify-end -translate-y-1/2">
+				<a href="#contact-us">
+					<p class="px-4 py-2 my-auto bg-red-600 rounded-lg text-white hover:bg-red-800" style="font-weight: bold;">CONTACT US</span></p>
+				</a>
+			</div> 
+		</div>
+
+	<div class="inline-flex mt-16 flex-wrap md:flex-nowrap md:grid md:grid-cols-2">
+
+			<a href="#modal-big-image1" class="md:bg-[url('/src/assets/cmercy-front.webp')] bg-cover hero-img">
+				<Hero 
+					imagePath="/src/assets/cmercy-front.webp"
+					altText="Casa Mercy front view"
+					imgClass="w-screen md:hidden"
+				/>
+				
+			</a>
+
+		<div class="pt-1 md:pl-1 md:pt-0">
+			<ul class="grid gap-1 grid-cols-2 sm:grid-cols-4 md:grid-cols-2">
+
+				<li>
+					<a href="#modal-big-image2">
+						<Hero 
+							imagePath="/src/assets/IMG_20230624_094832.webp"
+							altText="Casa Mercy front view"
+							imgClass="hero-img"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="#modal-big-image3">
+						<div class="relative hero-img">
+							<Hero 
+								imagePath="/src/assets/IMG_20230624_094731.webp"
+								altText="Casa Mercy front view"
+								imgClass="hero-img"
+							/>
+							
+							<!-- <p class="absolute sm:hidden" style="top:50%;left:50%;transform:translate(-50%,-50%);color:#191515;font-size:1.5rem;font-weight: bold;">More Photos</p> -->
+							<div class="img-album absolute sm:hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+								<svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 92 92" enable-background="new 0 0 92 92" xml:space="preserve">
+
+									<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+									
+									<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+									
+									<g id="SVGRepo_iconCarrier"> <path id="XMLID_1952_" d="M91.7,25.4l-9.5,45.8c-0.3,1.4-1.5,2.4-2.9,2.4c-0.2,0-0.4,0-0.6-0.1c-1.6-0.3-2.7-1.9-2.3-3.5l8.9-42.8 L27.9,15.5l-1.4,6.4c-0.4,1.6-2,2.6-3.6,2.3c-1.6-0.4-2.6-2-2.3-3.6l2.1-9.3c0.4-1.6,1.9-2.6,3.5-2.3l63.2,12.8 c0.8,0.2,1.5,0.6,1.9,1.3C91.7,23.8,91.8,24.6,91.7,25.4z M73,80c0,2.2-1.8,4-4,4H4c-2.2,0-4-1.8-4-4V31c0-2.2,1.8-4,4-4h65 c2.2,0,4,1.8,4,4V80z M8,35v24.7L24.9,46c1.3-1.1,3.4-1.1,4.7,0.1l19,16.8l7.9-6.8c1.3-1.1,2.8-1.1,4.1,0l3.3,3.4V35H8z M64,76v-7.3 l-5.6-5.3l-7.6,6.8c-1.3,1.1-3.2,1.1-4.5,0L27,53.3L8,68.8V76H64z M47.4,51.3c3.4,0,6.1-2.7,6.1-6.1c0-3.4-2.8-6.1-6.1-6.1 c-3.4,0-6.1,2.7-6.1,6.1C41.2,48.5,44,51.3,47.4,51.3z"/> </g>
+									
+								</svg>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#modal-big-image4">
+						<Hero 
+							imagePath="/src/assets/IMG_20230627_07033.webp"
+							altText="Casa Mercy front view"
+							imgClass="hidden sm:block hero-img"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="#modal-big-image5">
+						<div class="relative hero-img">
+							<Hero 
+								imagePath="/src/assets/IMG_20230624_095022.webp"
+								altText="Casa Mercy front view"
+								imgClass="hidden sm:block"
+							/>
+							
+							<div class="hidden sm:block sm:absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+								<svg class="flex justify-center" fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 92 92" enable-background="new 0 0 92 92" xml:space="preserve">
+
+									<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+									
+									<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+									
+									<g id="SVGRepo_iconCarrier"> <path id="XMLID_1952_" d="M91.7,25.4l-9.5,45.8c-0.3,1.4-1.5,2.4-2.9,2.4c-0.2,0-0.4,0-0.6-0.1c-1.6-0.3-2.7-1.9-2.3-3.5l8.9-42.8 L27.9,15.5l-1.4,6.4c-0.4,1.6-2,2.6-3.6,2.3c-1.6-0.4-2.6-2-2.3-3.6l2.1-9.3c0.4-1.6,1.9-2.6,3.5-2.3l63.2,12.8 c0.8,0.2,1.5,0.6,1.9,1.3C91.7,23.8,91.8,24.6,91.7,25.4z M73,80c0,2.2-1.8,4-4,4H4c-2.2,0-4-1.8-4-4V31c0-2.2,1.8-4,4-4h65 c2.2,0,4,1.8,4,4V80z M8,35v24.7L24.9,46c1.3-1.1,3.4-1.1,4.7,0.1l19,16.8l7.9-6.8c1.3-1.1,2.8-1.1,4.1,0l3.3,3.4V35H8z M64,76v-7.3 l-5.6-5.3l-7.6,6.8c-1.3,1.1-3.2,1.1-4.5,0L27,53.3L8,68.8V76H64z M47.4,51.3c3.4,0,6.1-2.7,6.1-6.1c0-3.4-2.8-6.1-6.1-6.1 c-3.4,0-6.1,2.7-6.1,6.1C41.2,48.5,44,51.3,47.4,51.3z"/> </g>
+									
+								</svg>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<Carouselh 
+		imagePath = "/src/assets/cmercy-front.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image1"
+		hrefPrev = "#modal-big-image16"
+		titlePrev = "to-image16"
+		hrefNext = "#modal-big-image2"
+		titleNext = "to-image2"
+	/>
+
+	<Carouselh 
+		imagePath = "/src/assets/IMG_20230624_094832.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image2"
+		hrefPrev = "#modal-big-image1"
+		titlePrev = "to-image1"
+		hrefNext = "#modal-big-image3"
+		titleNext = "to-image3"
+	/>
+
+	<Carouselh 
+		imagePath = "/src/assets/IMG_20230624_094731.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image3"
+		hrefPrev = "#modal-big-image2"
+		titlePrev = "to-image2"
+		hrefNext = "#modal-big-image4"
+		titleNext = "to-image4"
+	/>
+
+	<Carouselh 
+		imagePath = "/src/assets/IMG_20230627_07033.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image4"
+		hrefPrev = "#modal-big-image3"
+		titlePrev = "to-image3"
+		hrefNext = "#modal-big-image5"
+		titleNext = "to-image5"
+	/>
+
+	<Carouselh
+		imagePath = "/src/assets/IMG_20230624_095022.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image5"
+		hrefPrev = "#modal-big-image4"
+		titlePrev = "to-image4"
+		hrefNext = "#modal-big-image6"
+		titleNext = "to-image6"
+	/>
+	
+	<Carouselv 
+		imagePath = "/src/assets/cmercy-first-room-bathroom.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image6"
+		hrefPrev = "#modal-big-image5"
+		titlePrev = "to-image5"
+		hrefNext = "#modal-big-image7"
+		titleNext = "to-image7"
+	/>
+
+	<Carouselv 
+		imagePath = "/src/assets/cmercy-first-room-bathroom-shower.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image7"
+		hrefPrev = "#modal-big-image6"
+		titlePrev = "to-image6"
+		hrefNext = "#modal-big-image8"
+		titleNext = "to-image8"
+	/>
+
+	<Carouselv 
+		imagePath = "/src/assets/cmercy-second-room-bathroom.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image8"
+		hrefPrev = "#modal-big-image7"
+		titlePrev = "to-image7"
+		hrefNext = "#modal-big-image9"
+		titleNext = "to-image9"
+	/>
+
+	<Carouselv 
+		imagePath = "/src/assets/cmercy-second-room-bathroom-shower.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image9"
+		hrefPrev = "#modal-big-image8"
+		titlePrev = "to-image8"
+		hrefNext = "#modal-big-image10"
+		titleNext = "to-image10"
+	/>
+
+	<Carouselv 
+		imagePath = "/src/assets/cmercy-hall.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image10"
+		hrefPrev = "#modal-big-image9"
+		titlePrev = "to-image9"
+		hrefNext = "#modal-big-image11"
+		titleNext = "to-image11"
+	/>
+
+	<Carouselh 
+		imagePath = "/src/assets/IMG_20230624_094951.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image11"
+		hrefPrev = "#modal-big-image10"
+		titlePrev = "to-image10"
+		hrefNext = "#modal-big-image12"
+		titleNext = "to-image12"
+	/>
+
+	<Carouselh 
+		imagePath = "/src/assets/IMG_20230624_094951.jpg"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image11"
+		hrefPrev = "#modal-big-image10"
+		titlePrev = "to-image10"
+		hrefNext = "#modal-big-image12"
+		titleNext = "to-image12"
+	/>
+
+	<Carouselh 
+		imagePath = "/src/assets/1688053142974.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image12"
+		hrefPrev = "#modal-big-image11"
+		titlePrev = "to-image11"
+		hrefNext = "#modal-big-image13"
+		titleNext = "to-image13"
+	/>
+
+	<Carouselh 
+		imagePath = "/src/assets/1688053143155.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image13"
+		hrefPrev = "#modal-big-image12"
+		titlePrev = "to-image12"
+		hrefNext = "#modal-big-image14"
+		titleNext = "to-image14"
+	/>
+
+	<Carouselh 
+		imagePath = "/src/assets/1688053143172.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image14"
+		hrefPrev = "#modal-big-image13"
+		titlePrev = "to-image13"
+		hrefNext = "#modal-big-image15"
+		titleNext = "to-image15"
+	/>
+
+	<Carouselh 
+		imagePath = "/src/assets/IMG_20230624_095012.jpg"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image15"
+		hrefPrev = "#modal-big-image14"
+		titlePrev = "to-image14"
+		hrefNext = "#modal-big-image16"
+		titleNext = "to-image16"
+	/>
+
+	<Carouselv 
+		imagePath = "/src/assets/cmercy-entrance.webp"
+		altText = "Casa Mercy front view"
+		imageId = "modal-big-image16"
+		hrefPrev = "#modal-big-image15"
+		titlePrev = "to-image15"
+		hrefNext = "#modal-big-image1"
+		titleNext = "to-image1"
+	/>
+
+
+
+<main>
+	<h1 class="text-3xl sm:text-5xl">Casa Mercy</h1>
+	<p style="max-width: 75ch;">Casa Mercy is an ideal accommodation option in Varadero, 
+		situated within 30 meters of one of the world's most beautiful beaches and on the city's 
+		premier Avenue.</p>
+		<Hero 
+			imagePath="/src/assets/pixelcut-export.jpeg"
+			altText="Casa Mercy front view"
+			imgClass="my-2 w-screen sm:w-2/3 md:w-1/2 rounded-lg"
+		/>
+	
+		
+	<h2 class="pt-4 text-2xl sm:text-3xl">Two Rooms for Rent</h2>
+	<p class="pt-2" style="max-width: 75ch;">We offer two independent rooms, each with a double and a single bed, 
+			accommodating a maximum of three persons per room. Each room features a TV, 
+			split air conditioning and fan, refrigerator, closet, safe and a private bathroom with hot water. 
+			Stay connected with our 24-hour WiFi, and enjoy exceptional customer service throughhout your stay 
+			with us. We also offer daily room cleaning to ensure your stay is always fresh and comfortable.
+			Guests can enjoy a breathtaking view of the beach from our rooftop, 
+			which is shared by both rooms.</p>
+	
+	<h2 class="pt-4 text-2xl sm:text-3xl">A beautiful place to stay. Where can I find it?</h2>
+	<div class="md:grid md:grid-cols-2 md:gap-4">
+		<div id="map-wrapper  embed-responsive embed-responsive-16by9">
+			<iframe id="map" style="border:0;" class="pt-4 embed-responsive-item" src="https://www.google.com/maps/d/embed?mid=1HPqbymPdObGpk-Ok2uLP8IQvepFF8Wo&ehbc=2E312F" width="100%" height="450px" title="cmercy map location" frameborder="0" loading="lazy" allowfullscreen></iframe>
+			<p class="grid text-xl pb-5">Address: Av. 1st / 30 & 31 # 3004, Varadero, Cuba </p>
+		</div>
+		<div class="md:text-lg md:inline-block md:my-auto md:align-middle">
+		<p>We are also conveniently located near several points of interest, 
+			including ETECSA, where you can purchase nauta cards for WiFi, the photographic viewpoint of 
+			Varadero, and the house of Havano, where you can purchase souvenirs of your visit to this turistic
+			area.</p>
+		<p class="pt-2 md:pt-6">Within a radius of less than 100 meters, you will find several restaurants and cafes 
+			that have earned their reputation for exceptional offers and customer service, including Don Alex,
+			Salsa Suarez, and El Barco.</p>
+		</div>
+
+	</div>
+		<!-- <div id="map"></div>
+		<script> var map = L.map('map',{ center: [40.418889, -3.691944], zoom: 6, maxBounds: [[39.53,-13.09],[40,6.24]], minZoom: 5, maxZoom: 7 }); L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' }).addTo(map); </script> -->
+
+	<h2 class="pt-4 text-2xl sm:text-3xl">What people says about Casa Mercy?</h2>
+	<div class="comments-section my-6 mx-8">
+		<ul class="md:grid md:grid-cols-3 md:gap-6">
+			<li class="comments my-4 sm:w-1/2 m-auto md:w-full md:m-0">
+				<p class="text-sm p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia deserunt debitis vel omnis harum qui minima, aut quae assumenda nam animi autem sequi deleniti magnam doloremque id ipsum, labore aliquid.</p>
+			</li>
+			<li class="comments my-4 sm:w-1/2 m-auto md:w-full md:m-0">
+				<p class="text-sm p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci aut explicabo rem fugiat corporis in nesciunt corrupti eos magnam error labore cum eaque sunt laborum, repellendus sint! Atque, dolorum tempore?</p>
+			</li>
+			<li class="comments my-4 sm:w-1/2 m-auto md:w-full md:m-0">
+				<p class="text-sm p-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat fuga quos quo, qui exercitationem inventore accusantium ipsam? Veritatis, voluptate praesentium corporis culpa deserunt, aspernatur rem nostrum sed ipsam cum dolorem.</p>
+			</li>
+		</ul>
+	</div>		
+		<p class="text-center text-xl m-auto pb-3" style="max-width: 75ch;">
+			Don't hesitate any longer and contact us directly to reserve your stay at Casa Mercy. You can send us a 
+			message via WhatsApp or email with your desired dates. We look forward to helping you create unforgettable
+			vacation memories in Varadero!
+		</p>
+
+		<div id="contact-us" class="py-3 flex justify-center contact">
+			<a href="https://wa.me/5358689714">
+				<svg class="pe-4" width="64px" height="64px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#0095fd">
+
+					<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+					
+					<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+					
+					<g id="SVGRepo_iconCarrier">
+					
+					<path fill="#0095fd" fill-rule="evenodd" d="M96 16c-44.183 0-80 35.817-80 80 0 13.12 3.163 25.517 8.771 36.455l-8.608 36.155a6.002 6.002 0 0 0 7.227 7.227l36.155-8.608C70.483 172.837 82.88 176 96 176c44.183 0 80-35.817 80-80s-35.817-80-80-80ZM28 96c0-37.555 30.445-68 68-68s68 30.445 68 68-30.445 68-68 68c-11.884 0-23.04-3.043-32.747-8.389a6.003 6.003 0 0 0-4.284-.581l-28.874 6.875 6.875-28.874a6.001 6.001 0 0 0-.581-4.284C31.043 119.039 28 107.884 28 96Zm46.023 21.977c11.975 11.974 27.942 20.007 45.753 21.919 11.776 1.263 20.224-8.439 20.224-18.517v-6.996a18.956 18.956 0 0 0-13.509-18.157l-.557-.167-.57-.112-8.022-1.58a18.958 18.958 0 0 0-15.25 2.568 42.144 42.144 0 0 1-7.027-7.027 18.958 18.958 0 0 0 2.569-15.252l-1.582-8.021-.112-.57-.167-.557A18.955 18.955 0 0 0 77.618 52H70.62c-10.077 0-19.78 8.446-18.517 20.223 1.912 17.81 9.944 33.779 21.92 45.754Zm33.652-10.179a6.955 6.955 0 0 1 6.916-1.743l8.453 1.665a6.957 6.957 0 0 1 4.956 6.663v6.996c0 3.841-3.124 6.995-6.943 6.585a63.903 63.903 0 0 1-26.887-9.232 64.594 64.594 0 0 1-11.661-9.241 64.592 64.592 0 0 1-9.241-11.661 63.917 63.917 0 0 1-9.232-26.888C63.626 67.123 66.78 64 70.62 64h6.997a6.955 6.955 0 0 1 6.66 4.957l1.667 8.451a6.956 6.956 0 0 1-1.743 6.917l-1.12 1.12a5.935 5.935 0 0 0-1.545 2.669c-.372 1.403-.204 2.921.603 4.223a54.119 54.119 0 0 0 7.745 9.777 54.102 54.102 0 0 0 9.778 7.746c1.302.806 2.819.975 4.223.603a5.94 5.94 0 0 0 2.669-1.545l1.12-1.12Z" clip-rule="evenodd"/>
+					
+					</g>
+					
+					</svg>
+			</a>
+			<a href="mailto:casamercyvaradero@gmail.com">
+				<svg class="ps-4" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+					<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+					
+					<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+					
+					<g id="SVGRepo_iconCarrier"> <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="#0096fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <rect x="3" y="5" width="18" height="14" rx="2" stroke="#0096fd" stroke-width="2" stroke-linecap="round"/> </g>
+					
+					</svg>
+			</a>
+		</div>
+	
+	</main> 	
+	<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="0.9" d="M0,32L10.9,64C21.8,96,44,160,65,192C87.3,224,109,224,131,197.3C152.7,171,175,117,196,96C218.2,75,240,85,262,128C283.6,171,305,245,327,277.3C349.1,309,371,299,393,277.3C414.5,256,436,224,458,176C480,128,502,64,524,42.7C545.5,21,567,43,589,90.7C610.9,139,633,213,655,213.3C676.4,213,698,139,720,117.3C741.8,96,764,128,785,165.3C807.3,203,829,245,851,266.7C872.7,288,895,288,916,277.3C938.2,267,960,245,982,245.3C1003.6,245,1025,267,1047,261.3C1069.1,256,1091,224,1113,197.3C1134.5,171,1156,149,1178,170.7C1200,192,1222,256,1244,282.7C1265.5,309,1287,299,1309,250.7C1330.9,203,1353,117,1375,117.3C1396.4,117,1418,203,1429,245.3L1440,288L1440,320L1429.1,320C1418.2,320,1396,320,1375,320C1352.7,320,1331,320,1309,320C1287.3,320,1265,320,1244,320C1221.8,320,1200,320,1178,320C1156.4,320,1135,320,1113,320C1090.9,320,1069,320,1047,320C1025.5,320,1004,320,982,320C960,320,938,320,916,320C894.5,320,873,320,851,320C829.1,320,807,320,785,320C763.6,320,742,320,720,320C698.2,320,676,320,655,320C632.7,320,611,320,589,320C567.3,320,545,320,524,320C501.8,320,480,320,458,320C436.4,320,415,320,393,320C370.9,320,349,320,327,320C305.5,320,284,320,262,320C240,320,218,320,196,320C174.5,320,153,320,131,320C109.1,320,87,320,65,320C43.6,320,22,320,11,320L0,320Z"></path>
+	</svg>	 -->
+	<div>
+		<svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
+			<defs>
+			<path id="gentle-wave" d="M-160 44c30 0 
+			58-18 88-18s
+			58 18 88 18 
+			58-18 88-18 
+			58 18 88 18
+			v44h-352z" />
+			</defs>
+			<g class="parallax">
+			<use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
+			<use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1" />
+			<use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa" />
+			</g>
+	    </svg>
+		
+	</div>
+</Layout>
+
+<style>
+
+	main {
+		/* margin: auto; */
+		padding: 1rem;
+		/* width: 800px; */
+		/* max-width: calc(100% - 2rem); */
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	#map-wraper { 
+       width: 800px; 
+       height: 600px; 
+       } 
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-weight: 700;
+		line-height: 1;
+		text-align: left;
+		margin-bottom: 0.25em;
+		color: #80afe3;
+	}
+
+	h2 {
+		font-weight: 500;
+		line-height: 1;
+		text-align: left;
+		margin-bottom: 0.25em;
+		color: #80afe3;
+	}
+	.navbar-up {
+		background: rgba(255,255,255,0.48);
+		box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		width: 100%;
+		
+	}
+	
+	.hero-img:hover {
+		opacity: 70%;
+		transition: opacity 250ms ease-in;
+	}
+	::selection {
+	background-color: salmon;
+	color: white;
+	}
+	.parallax > use {
+	animation: move-forever 20s linear infinite;
+	&:nth-child(1) {
+		animation-delay: -2s;
+	}
+	&:nth-child(2) {
+		animation-delay: -6s;
+		animation-duration: 7s;
+	}
+	&:nth-child(3) {
+		animation-delay: -4s;
+		animation-duration: 7s;
+	}
+	}
+
+	@keyframes move-forever {
+	0% {
+		transform: translate(-90px, 0%);
+	}
+	100% {
+		transform: translate(85px, 0%);
+	}
+	}
+
+	.editorial {
+		display: block;
+		width: 100%;
+		height: 10em;
+		max-height: 100vh;
+		margin: 0;
+	}
+
+	.content {
+		font-family: "Lato", sans-serif;
+		text-align: center;
+		background-color: #2d55aa;
+		text-align: center;
+		min-height: 75vh;
+		margin: -0.1em 0 0 0;
+		padding: 1em;
+		color: #eee;
+		font-size: 2em;
+		font-weight: 300;
+	}
+	.content {
+		font-size: 1em;
+	}
+	.content h1 {
+		margin-top: -1.3em;
+		font-weight: 100;
+		font-size: 5em;
+		user-select: none;
+		cursor: default;
+	}
+
+	/*prevent many large-by-comparison ripples by shrinking the height*/
+	@media (max-width: 50em) {
+
+	.editorial {
+		height: 17vw;
+	}
+	}
+	.comments {
+		background-color: #eaebeb7d;
+		backdrop-filter: blur(50px);
+		-webkit-backdrop-filter: blur(50px);
+		opacity: 0.6;
+		box-shadow: 0 0 10px #070647;
+		outline-style: none;
+		outline-color: #3700ff;
+		outline-width: 0px;
+		border-radius: 10px;
+	}
+	.comments .p {
+		color:#222;
+	}
+	.embed-responsive iframe {
+		pointer-events: none;
+	}
+</style>
