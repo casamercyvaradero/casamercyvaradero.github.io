@@ -22,8 +22,8 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
             <div class="w-screen px-6 sm:w-full sm:px-0 relative">
                 <Image class="mt-16" src={images[imagePath]()} alt={altText} loading={'lazy'}/>
                 <a href="#close" title="Close" class="close me-6 sm:me-0">X</a>
-                <a class="absolute ms-2 px-2 rounded-full top-1/2 -translate-y-3/4 text-blue-600 bg-white hover:bg-blue-600 hover:text-white" href={hrefPrev} title={titlePrev}><</a>
-                <a class="absolute me-6 sm:me-1 px-2 rounded-full right-1 top-1/2 -translate-y-3/4 text-blue-600 bg-white hover:bg-blue-600 hover:text-white" href={hrefNext} title={titleNext}>></a>
+                <a class="absolute ms-2 px-2 rounded-full top-1/2 -translate-y-3/4 text-blue-600 bg-white hover:bg-blue-600 hover:text-white" href={hrefPrev} title={titlePrev}>&#8826;</a>
+                <a class="absolute me-6 sm:me-1 px-2 rounded-full right-1 top-1/2 -translate-y-3/4 text-blue-600 bg-white hover:bg-blue-600 hover:text-white" href={hrefNext} title={titleNext}>&#8827;</a>
             </div>
         </div>
     </div>
