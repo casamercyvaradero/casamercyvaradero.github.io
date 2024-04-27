@@ -1,4 +1,4 @@
----
+f---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Carouselh from '../components/Carouselh.astro';
@@ -14,7 +14,7 @@ import Carouselv from '../components/Carouselv.astro';
 			altText="Casa Mercy Logo"
 			/>
 			<div class="relative flex flex-end bottom-1/2 pe-6 justify-end -translate-y-1/2">
-				<a href="#contact-us">
+				<a href="#contact-us" aria-label="Click to Contact Info">
 					<p class="px-4 py-2 my-auto bg-red-600 rounded-lg text-white hover:bg-red-800" style="font-weight: bold;">CONTACT US</span></p>
 				</a>
 			</div> 
@@ -22,7 +22,7 @@ import Carouselv from '../components/Carouselv.astro';
 
 	<div class="inline-flex mt-16 flex-wrap md:flex-nowrap md:grid md:grid-cols-2">
 
-			<a href="#modal-big-image1" class="bg-cover hero-img md:bg-[url('/images/cmercy-front.webp')]">
+			<a href="#cmercy-front" class="bg-cover hero-img md:bg-[url('/images/cmercy-front.webp')]" aria-label="Casa Mercy Front Big Picture">
 				
 				<Hero 
 					imagePath="/src/assets/cmercy-front.webp"
@@ -36,10 +36,10 @@ import Carouselv from '../components/Carouselv.astro';
 			<ul class="grid gap-1 grid-cols-2 sm:grid-cols-4 md:grid-cols-2">
 
 				<li>
-					<a href="#modal-big-image2">
+					<a href="#casa-mercy-second-room-bedroom">
 						<Hero 
 							imagePath="/src/assets/IMG_20230624_094832.webp"
-							altText="Casa Mercy front view"
+							altText="Casa Mercy Second Room Bedroom"
 							imgClass="hero-img"
 						/>
 					</a>
@@ -107,18 +107,18 @@ import Carouselv from '../components/Carouselv.astro';
 	<Carouselh 
 		imagePath = "/src/assets/cmercy-front.webp"
 		altText = "Casa Mercy front view"
-		imageId = "modal-big-image1"
-		hrefPrev = "#modal-big-image16"
+		imageId = "cmercy-front"
+		hrefPrev = "#cmercy-front6"
 		titlePrev = "to-image16"
-		hrefNext = "#modal-big-image2"
+		hrefNext = "#casa-mercy-second-room-bedroom"
 		titleNext = "to-image2"
 	/>
 
 	<Carouselh 
 		imagePath = "/src/assets/IMG_20230624_094832.webp"
 		altText = "Casa Mercy front view"
-		imageId = "modal-big-image2"
-		hrefPrev = "#modal-big-image1"
+		imageId = "casa-mercy-second-room-bedroom"
+		hrefPrev = "#cmercy-front"
 		titlePrev = "to-image1"
 		hrefNext = "#modal-big-image3"
 		titleNext = "to-image3"
@@ -128,7 +128,7 @@ import Carouselv from '../components/Carouselv.astro';
 		imagePath = "/src/assets/IMG_20230624_094731.webp"
 		altText = "Casa Mercy front view"
 		imageId = "modal-big-image3"
-		hrefPrev = "#modal-big-image2"
+		hrefPrev = "#casa-mercy-second-room-bedroom"
 		titlePrev = "to-image2"
 		hrefNext = "#modal-big-image4"
 		titleNext = "to-image4"
@@ -190,77 +190,77 @@ import Carouselv from '../components/Carouselv.astro';
 		imageId = "modal-big-image9"
 		hrefPrev = "#modal-big-image8"
 		titlePrev = "to-image8"
-		hrefNext = "#modal-big-image10"
+		hrefNext = "#cmercy-front0"
 		titleNext = "to-image10"
 	/>
 
 	<Carouselv 
 		imagePath = "/src/assets/cmercy-hall.webp"
 		altText = "Casa Mercy front view"
-		imageId = "modal-big-image10"
+		imageId = "cmercy-front0"
 		hrefPrev = "#modal-big-image9"
 		titlePrev = "to-image9"
-		hrefNext = "#modal-big-image11"
+		hrefNext = "#cmercy-front1"
 		titleNext = "to-image11"
 	/>
 
 	<Carouselh 
 		imagePath = "/src/assets/IMG_20230624_094951.webp"
 		altText = "Casa Mercy front view"
-		imageId = "modal-big-image11"
-		hrefPrev = "#modal-big-image10"
+		imageId = "cmercy-front1"
+		hrefPrev = "#cmercy-front0"
 		titlePrev = "to-image10"
-		hrefNext = "#modal-big-image12"
+		hrefNext = "#cmercy-front2"
 		titleNext = "to-image12"
 	/>
 
 	<Carouselh 
 		imagePath = "/src/assets/1688053142974.webp"
 		altText = "Casa Mercy front view"
-		imageId = "modal-big-image12"
-		hrefPrev = "#modal-big-image11"
+		imageId = "cmercy-front2"
+		hrefPrev = "#cmercy-front1"
 		titlePrev = "to-image11"
-		hrefNext = "#modal-big-image13"
+		hrefNext = "#cmercy-front3"
 		titleNext = "to-image13"
 	/>
 
 	<Carouselh 
 		imagePath = "/src/assets/1688053143155.webp"
 		altText = "Casa Mercy front view"
-		imageId = "modal-big-image13"
-		hrefPrev = "#modal-big-image12"
+		imageId = "cmercy-front3"
+		hrefPrev = "#cmercy-front2"
 		titlePrev = "to-image12"
-		hrefNext = "#modal-big-image14"
+		hrefNext = "#cmercy-front4"
 		titleNext = "to-image14"
 	/>
 
 	<Carouselh 
 		imagePath = "/src/assets/1688053143172.webp"
 		altText = "Casa Mercy front view"
-		imageId = "modal-big-image14"
-		hrefPrev = "#modal-big-image13"
+		imageId = "cmercy-front4"
+		hrefPrev = "#cmercy-front3"
 		titlePrev = "to-image13"
-		hrefNext = "#modal-big-image15"
+		hrefNext = "#cmercy-front5"
 		titleNext = "to-image15"
 	/>
 
 	<Carouselh 
 		imagePath = "/src/assets/IMG_20230624_095012.webp"
 		altText = "Casa Mercy front view"
-		imageId = "modal-big-image15"
-		hrefPrev = "#modal-big-image14"
+		imageId = "cmercy-front5"
+		hrefPrev = "#cmercy-front4"
 		titlePrev = "to-image14"
-		hrefNext = "#modal-big-image16"
+		hrefNext = "#cmercy-front6"
 		titleNext = "to-image16"
 	/>
 
 	<Carouselv 
 		imagePath = "/src/assets/cmercy-entrance.webp"
 		altText = "Casa Mercy front view"
-		imageId = "modal-big-image16"
-		hrefPrev = "#modal-big-image15"
+		imageId = "cmercy-front6"
+		hrefPrev = "#cmercy-front5"
 		titlePrev = "to-image15"
-		hrefNext = "#modal-big-image1"
+		hrefNext = "#cmercy-front"
 		titleNext = "to-image1"
 	/>
 
