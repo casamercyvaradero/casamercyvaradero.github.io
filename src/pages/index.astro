@@ -308,9 +308,9 @@ import Carouselv from '../components/Carouselv.astro';
 		<script> var map = L.map('map',{ center: [40.418889, -3.691944], zoom: 6, maxBounds: [[39.53,-13.09],[40,6.24]], minZoom: 5, maxZoom: 7 }); L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' }).addTo(map); </script> -->
 
 	<h2 class="pt-4 text-2xl sm:text-3xl">What people says about Casa Mercy?</h2>
-	<div class="comments my-6 mx-8">
+	<div class="my-6 mx-8">
 		<ul class="md:grid md:grid-cols-3 md:gap-6">
-			<li class="my-4 sm:w-1/2 m-auto md:w-full md:m-0">
+			<li class="comments my-4 sm:w-1/2 m-auto md:w-full md:m-0">
 				<div class="grid grid-cols-2">
 					
 					<Hero 
@@ -326,7 +326,7 @@ import Carouselv from '../components/Carouselv.astro';
 				</div>
 				<p class="text-sm p-4">Frank and Mercy were wonderful, kind and very helpful hosts! The roof top terrace has a beautiful view of the ocean. I had a phone with data so I didn’t need the wifi. Very hot showers and absolutely immaculately clean bathroom. Excellent location, would definitely come back to stay again!</p>
 			</li>
-			<li class="my-4 sm:w-1/2 m-auto md:w-full md:m-0">
+			<li class="comments my-4 sm:w-1/2 m-auto md:w-full md:m-0">
 				<div class="grid grid-cols-2">
 					<Hero 
 						imagePath="/src/assets/jessica-profile-picture.webp"
@@ -340,7 +340,7 @@ import Carouselv from '../components/Carouselv.astro';
 				</div>
 					<p class="text-sm p-4">Mercy was very nice and helpful the whole time we were there. I highly recommend this place for access to Varadero’s gorgeous beach.</p>
 			</li>
-			<li class="my-4 sm:w-1/2 m-auto md:w-full md:m-0">
+			<li class="comments my-4 sm:w-1/2 m-auto md:w-full md:m-0">
 				<div class="grid grid-cols-2">
 					<Hero 
 						imagePath="/src/assets/georg-profile-picture.webp"
@@ -533,9 +533,9 @@ import Carouselv from '../components/Carouselv.astro';
 	}
 	.comments {
 		background-color: #eaebeb7d;
-		backdrop-filter: blur(50px);
+		/*backdrop-filter: blur(50px);
 		-webkit-backdrop-filter: blur(50px);
-		opacity: 0.6;
+		opacity: 0.6;*/
 		box-shadow: 0 0 10px #070647;
 		outline-style: none;
 		outline-color: #3700ff;
