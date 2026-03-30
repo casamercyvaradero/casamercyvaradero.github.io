@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Casa Mercy Varadero: Casa particular y alquiler de habitaciones independientes a solo 30 metros de la playa. Con WiFi, aire acondicionado y terraza con vista al mar.">
+    <title>Casa Mercy Varadero | Casa Particular y Renta de Habitaciones cerca de la Playa</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Datos estructurados (SEO Local) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Casa Mercy Varadero",
+      "image": "assets/hero-bg.webp",
+      "description": "Alquiler de habitaciones en casa particular en Varadero, Cuba. A 30 metros de la playa.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. 1ra / 30 y 31 #3004",
+        "addressLocality": "Varadero",
+        "addressRegion": "Matanzas",
+        "addressCountry": "CU"
+      },
+      "priceRange": "$$",
+      "amenityFeature":[
+        {"@type": "LocationFeatureSpecification", "name": "WiFi", "value": "True"},
+        {"@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": "True"}
+      ]
+    }
+    </script>
+
+    <style>
+        /* Variables y Físicas (UI/UX) */
+        :root {
+            --primary: #005f73;
+            --secondary: #0a9396;
+            --accent: #e9d8a6;
+            --text-dark: #2b2d42;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-gray: #f4f4f9;
+            /* Curva elástica premium tipo iOS para hovers */
+            --spring: cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            /* Curva suave para opacidades y desenfoques */
+            --smooth: cubic-bezier(0.25, 1, 0.5, 1);
+            --transition: all 0.5s var(--smooth);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.5; 
+            font-size: clamp(0.95rem, 1vw, 1.1rem); 
+            background-color: var(--bg-light);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        *:focus-visible { outline: 3px solid var(--secondary); outline-offset: 2px; }
+
+        /* Animaciones al hacer scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--smooth), transform 0.8s var(--smooth);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- CLASES DE TRANSICIÓN DE IDIOMA (UX) --- */
+        .lang-anim {
+            transition: opacity 0.4s var(--smooth), filter 0.4s var(--smooth) !important;
+        }
+        .lang-anim-hidden {
+            opacity: 0 !important;
+            filter: blur(4px) !important;
+        }
+
+        /* ----- HEADER Y NAVEGACIÓN ----- */
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.2rem 5%; /* Altura inicial generosa */
+            transition: padding 0.4s var(--smooth), background-color 0.4s var(--smooth), box-shadow 0.4s var(--smooth);
+        }
+
+        /* Estado del header al hacer scroll */
+        header.scrolled {
+            padding: 0.6rem 5%;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .logo img { height: 50px; width: auto; transition: transform 0.4s var(--spring); }
+        .logo img:hover { transform: scale(1.08); }
+
+        nav ul { display: flex; list-style: none; gap: 2rem; flex-wrap: wrap; }
+        nav a { 
+            text-decoration: none; color: var(--text-dark); font-weight: 500; 
+            position: relative; padding-bottom: 5px; font-size: 1rem;
+            transition: color 0.3s var(--smooth);
+        }
+        nav a:hover { color: var(--primary); }
+        nav a::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: 0; left: 0; background-color: var(--secondary);
+            transition: width 0.4s var(--smooth);
+        }
+        nav a:hover::after { width: 100%; }
+
+        .header-actions { display: flex; align-items: center; gap: 1rem; }
+
+        .lang-btn {
+            background: var(--primary); color: var(--text-light); border: none;
+            padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer;
+            font-weight: 600; font-size: 0.9rem;
+            transition: transform 0.4s var(--spring), background-color 0.3s ease, box-shadow 0.4s ease;
+        }
+        .lang-btn:hover { 
+            background: var(--secondary); 
+            transform: translateY(-3px); 
+            box-shadow: 0 5px 15px rgba(10, 147, 150, 0.3);
+        }
+
+        /* Botón Hamburguesa */
+        .menu-toggle {
+            display: none; flex-direction: column; justify-content: space-between;
+            width: 30px; height: 20px; background: transparent; border: none; cursor: pointer; z-index: 1001;
+        }
+        .menu-toggle span {
+            display: block; width: 100%; height: 2px; background-color: var(--primary);
+            border-radius: 3px; transition: transform 0.4s var(--spring), opacity 0.3s ease;
+        }
+        .menu-toggle.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+        /* Sección Hero */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0, 30, 60, 0.4), rgba(0, 30, 60, 0.7)), url('assets/hero-bg.webp') center/cover fixed;
+            height: 85vh; min-height: 500px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: var(--text-light); padding: 0 5%;
+            overflow: hidden;
+        }
+
+        .hero h1 { 
+            font-size: clamp(2rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; 
+            text-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            animation: slideUpFade 1.2s var(--smooth);
+        }
+        .hero p { 
+            font-size: clamp(1rem, 2vw, 1.3rem); margin-bottom: 2.5rem; max-width: 700px; 
+            animation: slideUpFade 1.2s var(--smooth) 0.2s backwards;
+        }
+        
+        .btn {
+            background-color: var(--accent); color: var(--text-dark);
+            padding: 1rem 2.5rem; text-decoration: none; font-size: 1.1rem;
+            font-weight: 700; border-radius: 30px; 
+            display: inline-block; box-shadow: 0 8px 20px rgba(233, 216, 166, 0.3);
+            transition: transform 0.4s var(--spring), box-shadow 0.4s var(--smooth), background-color 0.3s;
+            animation: slideUpFade 1.2s var(--smooth) 0.4s backwards;
+        }
+        .btn:hover { 
+            background-color: #d4c18c; 
+            transform: translateY(-5px) scale(1.03); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2); 
+        }
+
+        @keyframes slideUpFade { 
+            from { opacity: 0; transform: translateY(40px); filter: blur(5px); } 
+            to { opacity: 1; transform: translateY(0); filter: blur(0); } 
+        }
+
+        /* Estilos Generales Secciones */
+        section { padding: 5rem 5%; } 
+        .bg-gray { background-color: var(--bg-gray); }
+        h2 { 
+            text-align: center; color: var(--primary); font-size: clamp(2rem, 4vw, 2.8rem); 
+            margin-bottom: 2rem; position: relative;
+        }
+        
+        .grid { display: grid; gap: 2.5rem; }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+        /* Tarjetas */
+        .card {
+            background: var(--bg-light); border-radius: 16px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04); 
+            transition: transform 0.5s var(--spring), box-shadow 0.5s var(--smooth);
+            display: flex; flex-direction: column;
+        }
+        .card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+        }
+        .card img { 
+            width: 100%; height: 260px; object-fit: cover; 
+            transition: transform 0.7s var(--smooth);
+        }
+        .card:hover img { transform: scale(1.05); }
+        .card-content { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+        .card h3 { color: var(--primary); margin-bottom: 0.8rem; font-size: 1.4rem; }
+
+        /* Galería de Playa */
+        .beach-gallery {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem; grid-auto-rows: 250px;
+        }
+        .beach-item {
+            border-radius: 16px; overflow: hidden; position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); cursor: pointer;
+        }
+        .beach-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.8s var(--smooth), filter 0.5s var(--smooth);
+        }
+        .beach-item::after {
+            content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+            opacity: 0; transition: opacity 0.5s var(--smooth);
+        }
+        .beach-item:hover img { transform: scale(1.1); filter: brightness(1.1); }
+        .beach-item:hover::after { opacity: 1; }
+        .beach-item.large { grid-column: span 2; grid-row: span 2; }
+        
+        /* Comodidades */
+        .amenities-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; list-style: none; margin-top: 3rem; }
+        .amenity-item {
+            background: white; padding: 1rem 1.5rem; border-radius: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04); font-weight: 600; color: var(--text-dark);
+            transition: transform 0.4s var(--spring), box-shadow 0.4s var(--smooth), color 0.3s;
+            border: 1px solid rgba(0,0,0,0.02); display: flex; align-items: center; gap: 0.5rem;
+        }
+        .amenity-item:hover { 
+            transform: translateY(-5px) scale(1.02); 
+            box-shadow: 0 10px 25px rgba(10, 147, 150, 0.15); 
+            color: var(--primary); border-color: rgba(10, 147, 150, 0.2);
+        }
+
+        /* Testimonios */
+        .testimonial { 
+            background: white; padding: 2.5rem; border-radius: 16px; 
+            border-top: 4px solid var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            transition: transform 0.5s var(--spring), box-shadow 0.5s var(--smooth);
+        }
+        .testimonial:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+        .testimonial p { font-style: italic; color: #555; position: relative; z-index: 1; }
+        .testimonial p::before {
+            content: '"'; position: absolute; top: -15px; left: -10px;
+            font-size: 3rem; color: rgba(233, 216, 166, 0.4); z-index: -1; font-family: serif;
+        }
+        .testimonial-author { font-weight: 700; margin-top: 1.5rem; color: var(--primary); display: block;}
+
+        /* Footer y Contacto */
+        footer { background-color: #112a32; color: var(--text-light); text-align: center; padding: 5rem 5%; }
+        .contact-methods { display: flex; justify-content: center; gap: 1.5rem; margin: 2.5rem 0; flex-wrap: wrap; }
+        .contact-btn {
+            display: inline-flex; align-items: center; gap: 0.8rem; font-size: 1.1rem; font-weight: 600;
+            background: rgba(255,255,255,0.05); padding: 1rem 2.5rem; border-radius: 40px;
+            border: 1px solid rgba(255,255,255,0.1); transition: transform 0.4s var(--spring), background 0.4s var(--smooth), border-color 0.4s;
+            color: white !important; text-decoration: none;
+        }
+        .contact-btn:hover { 
+            background: var(--secondary); transform: translateY(-5px) scale(1.05); 
+            border-color: var(--secondary); box-shadow: 0 10px 30px rgba(10, 147, 150, 0.4);
+        }
+        .contact-btn svg { width: 26px; height: 26px; transition: transform 0.4s var(--spring); }
+        .contact-btn:hover svg { transform: scale(1.1) rotate(5deg); }
+
+        @media (min-width: 1440px) {
+            section { padding: 6rem calc((100vw - 1200px) / 2); }
+            header { padding: 1.2rem calc((100vw - 1200px) / 2); }
+            header.scrolled { padding: 0.6rem calc((100vw - 1200px) / 2); }
+            footer { padding: 6rem calc((100vw - 1200px) / 2); }
+        }
+
+        /* ----- MÓVILES Y UX DEL HAMBURGUER MENU ----- */
+        @media (max-width: 768px) {
+            header, header.scrolled { padding: 1rem 5%; }
+            .logo img { height: 40px; }
+            .menu-toggle { display: flex; }
+            
+            nav {
+                position: absolute; top: 100%; left: 0; width: 100%;
+                background-color: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px);
+                box-shadow: 0 15px 25px rgba(0,0,0,0.08); border-top: 1px solid var(--bg-gray);
+                opacity: 0; visibility: hidden; transform: translateY(-10px);
+                transition: opacity 0.4s var(--smooth), transform 0.4s var(--smooth), visibility 0.4s;
+            }
+            nav.active { opacity: 1; visibility: visible; transform: translateY(0); }
+            
+            nav ul { flex-direction: column; padding: 1rem 0; gap: 0; }
+            
+            /* Animación en cascada de los links (Micro-interacción premium) */
+            nav ul li { opacity: 0; transform: translateY(15px); transition: opacity 0.4s var(--smooth), transform 0.4s var(--spring); }
+            nav.active ul li { opacity: 1; transform: translateY(0); }
+            nav.active ul li:nth-child(1) { transition-delay: 0.1s; }
+            nav.active ul li:nth-child(2) { transition-delay: 0.15s; }
+            nav.active ul li:nth-child(3) { transition-delay: 0.2s; }
+            nav.active ul li:nth-child(4) { transition-delay: 0.25s; }
+
+            nav a {
+                display: block; padding: 1.2rem 5%; font-size: 1.2rem; text-align: center;
+                border-bottom: 1px solid rgba(0,0,0,0.03); color: var(--text-dark);
+            }
+            nav a::after { display: none; }
+
+            section { padding: 3rem 5%; }
+            .hero h1 { font-size: 2.2rem; }
+            .card img { height: 220px; }
+            .beach-item.large { grid-column: span 1; grid-row: span 1; }
+            .contact-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="site-header">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logotipo Casa Mercy Varadero">
+        </div>
+        
+        <nav aria-label="Navegación principal" id="main-nav">
+            <ul>
+                <li><a href="#habitaciones" data-i18n="nav-rooms">Habitaciones</a></li>
+                <li><a href="#playa" data-i18n="nav-beach">La Playa</a></li>
+                <li><a href="#terraza" data-i18n="nav-terrace">Terraza</a></li>
+                <li><a href="#entorno" data-i18n="nav-location">Entorno</a></li> 
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button id="lang-btn" class="lang-btn" aria-label="Cambiar idioma" onclick="toggleLanguage()">EN</button>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 data-i18n="hero-title">Tu Casa Particular en Varadero, a 30m de la Playa</h1>
+            <p data-i18n="hero-desc">Descubre el alojamiento perfecto. Renta de habitaciones independientes con WiFi, aire acondicionado y una espectacular terraza con vista al mar.</p>
+            <a href="#contacto" class="btn" data-i18n="hero-btn">Reservar Ahora</a>
+        </section>
+
+        <!-- Habitaciones -->
+        <section id="habitaciones" class="bg-gray">
+            <h2 class="reveal" data-i18n="rooms-title">Renta de Habitaciones Privadas</h2>
+            <div class="grid grid-2">
+                <article class="card reveal">
+                    <img src="assets/IMG_20260330_145909.webp" alt="Habitación principal" loading="lazy">
+                    <div class="card-content">
+                        <h3 data-i18n="room1-title">Habitación Principal</h3>
+                        <p data-i18n="room1-desc">Espaciosa e impecable. Cuenta con una cama matrimonial y una personal (capacidad 3 personas), perfecta para descansar tras un día de sol.</p>
+                    </div>
+                </article>
+                <article class="card reveal" style="transition-delay: 0.15s;">
+                    <img src="assets/IMG_20260330_150014.webp" alt="Habitación secundaria" loading="lazy">
+                    <div class="card-content">
+                        <h3 data-i18n="room2-title">Habitación Secundaria</h3>
+                        <p data-i18n="room2-desc">Acogedora, fresca e independiente. Cuenta con <strong>acceso directo a la exclusiva terraza</strong> y un diseño orientado a garantizar tu máximo confort.</p>
+                    </div>
+                </article>
+            </div>
+
+            <ul class="amenities-list reveal">
+                <li class="amenity-item" data-i18n="am-ac">❄️ Aire Acondicionado Split</li>
+                <li class="amenity-item" data-i18n="am-bath">🚿 Baño Privado (Agua Caliente)</li>
+                <li class="amenity-item" data-i18n="am-safe">🔒 Caja Fuerte y TV</li>
+                <li class="amenity-item" data-i18n="am-wifi">📶 WiFi Disponible</li>
+                <li class="amenity-item" data-i18n="am-clean">🧹 Limpieza Diaria</li>
+            </ul>
+        </section>
+
+        <!-- Galería de Playa -->
+        <section id="playa">
+            <h2 class="reveal" data-i18n="beach-title">El Paraíso a 30 Metros</h2>
+            <p class="reveal" style="text-align: center; max-width: 700px; margin: 0 auto 2rem;" data-i18n="beach-desc">Nuestra ubicación privilegiada te permite salir de la casa y en menos de un minuto estar pisando la arena blanca y cristalina de la mejor playa del mundo.</p>
+            
+            <div class="beach-gallery reveal">
+                <div class="beach-item large">
+                    <img src="assets/beach-1.webp" alt="Playa de Varadero arena blanca" loading="lazy">
+                </div>
+                <div class="beach-item">
+                    <img src="assets/beach-2.webp" alt="Amanecer en la playa cerca de la casa" loading="lazy">
+                </div>
+                <div class="beach-item">
+                    <img src="assets/beach-3.webp" alt="Mar cristalino turquesa Varadero" loading="lazy">
+                </div>
+                <div class="beach-item large">
+                    <img src="assets/beach-4.webp" alt="Palmeras y brisa del mar" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Terraza -->
+        <section id="terraza" class="bg-gray">
+            <h2 class="reveal" data-i18n="terrace-title">Nuestra Exclusiva Terraza</h2>
+            <div class="grid grid-2 reveal" style="align-items: center;">
+                <div>
+                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem;" data-i18n="terrace-subtitle">Vistas al Horizonte</h3>
+                    <p data-i18n="terrace-desc" style="font-size: 1.1rem; margin-bottom: 1.5rem;">Relájate en nuestra terraza en la azotea, un espacio amplio ideal para leer, tomar un café matutino o disfrutar de la suave brisa del mar. Sillas de descanso y sombra a tu disposición.</p>
+                </div>
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+                    <img src="assets/IMG_20260312_093022.webp" alt="Terraza en la azotea" style="width: 100%; display: block; transition: transform 0.6s var(--smooth);" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Entorno -->
+        <section id="entorno">
+            <h2 class="reveal" data-i18n="loc-title">Zonas de Interés</h2>
+            <div class="grid grid-3 reveal">
+                <article class="card">
+                    <img src="assets/varadero-sign.webp" alt="Cartel turístico de Cuba Varadero" loading="lazy">
+                    <div class="card-content" style="text-align: center;">
+                        <h3 data-i18n="surr-1">Parador Fotográfico</h3>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="assets/el-barco.webp" alt="Restaurante El Barco" loading="lazy">
+                    <div class="card-content" style="text-align: center;">
+                        <h3 data-i18n="surr-2">Opciones Gastronómicas</h3>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="assets/exterior.webp" alt="Avenida principal" loading="lazy">
+                    <div class="card-content" style="text-align: center;">
+                        <h3 data-i18n="surr-3">Vista Exterior de la Casa</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Opiniones -->
+        <section id="opiniones" class="bg-gray">
+            <h2 class="reveal" data-i18n="rev-title">Experiencias de huéspedes</h2>
+            <div class="grid grid-3 reveal">
+                <div class="testimonial">
+                    <p>"Frank and Mercy were wonderful, kind and very helpful! The roof top terrace has a beautiful view of the ocean... Excellent location!"</p>
+                    <span class="testimonial-author">- Andrea (Canadá)</span>
+                </div>
+                <div class="testimonial" style="transition-delay: 0.1s;">
+                    <p>"Mercy was very nice and helpful the whole time we were there. I highly recommend this place for access to Varadero's gorgeous beach."</p>
+                    <span class="testimonial-author">- Jessica (EE.UU)</span>
+                </div>
+                <div class="testimonial" style="transition-delay: 0.2s;">
+                    <p>"The apartment is in spotless condition and no two minutes walking distance to the beach. 100% recommended, stop looking any further!"</p>
+                    <span class="testimonial-author">- Georg (Alemania)</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <h2 class="reveal" style="color: white;" data-i18n="contact-title">Reserva Tu Estancia</h2>
+        <p class="reveal" data-i18n="contact-desc">Contáctanos directamente vía WhatsApp o Email para asegurar tu reservación de alojamiento con los mejores precios.</p>
+        
+        <div class="contact-methods reveal">
+            <a href="https://wa.me/+5358689194" target="_blank" class="contact-btn">
+                <svg viewBox="0 0 20 20" fill="#ffffff" stroke="#ffffff" stroke-width="0"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <path d="M259.821,7453.12124 C259.58,7453.80344 258.622,7454.36761 257.858,7454.53266 C257.335,7454.64369 256.653,7454.73172 254.355,7453.77943 C251.774,7452.71011 248.19,7448.90097 248.19,7446.36621 C248.19,7445.07582 248.934,7443.57337 250.235,7443.57337 C250.861,7443.57337 250.999,7443.58538 251.205,7444.07952 C251.446,7444.6617 252.034,7446.09613 252.104,7446.24317 C252.393,7446.84635 251.81,7447.19946 251.387,7447.72462 C251.252,7447.88266 251.099,7448.05372 251.27,7448.3478 C251.44,7448.63589 252.028,7449.59418 252.892,7450.36341 C254.008,7451.35771 254.913,7451.6748 255.237,7451.80984 C255.478,7451.90987 255.766,7451.88687 255.942,7451.69881 C256.165,7451.45774 256.442,7451.05762 256.724,7450.6635 C256.923,7450.38141 257.176,7450.3464 257.441,7450.44643 C257.62,7450.50845 259.895,7451.56477 259.991,7451.73382 C260.062,7451.85686 260.062,7452.43903 259.821,7453.12124 M254.002,7439 L253.997,7439 L253.997,7439 C248.484,7439 244,7443.48535 244,7449 C244,7451.18666 244.705,7453.21526 245.904,7454.86076 L244.658,7458.57687 L248.501,7457.3485 C250.082,7458.39482 251.969,7459 254.002,7459 C259.515,7459 264,7454.51465 264,7449 C264,7443.48535 259.515,7439 254.002,7439" transform="translate(-244.000000, -7439.000000)"></path> </g></svg>
+                WhatsApp
+            </a>
+            <a href="mailto:casamercyvaradero@gmail.com" class="contact-btn">
+                <svg viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                Email
+            </a>
+        </div>
+
+        <p class="reveal" data-i18n="footer-address">Dirección: Av. 1ra / 30 y 31 #3004, Varadero, Cuba</p>
+        <p class="reveal" style="margin-top: 1rem; color: var(--accent);" data-i18n="footer-hosts">Tus anfitriones: Frank y Mercy</p>
+    </footer>
+
+    <!-- Lógica de Interactividad y UI/UX -->
+    <script>
+        // Efecto del Header al hacer Scroll (Reducción y sombra premium)
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('site-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Funcionalidad del Menú Hamburguesa
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        const navLinks = document.querySelectorAll('#main-nav a');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', false);
+            });
+        });
+
+        // Animaciones al hacer scroll (Reveal elements)
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Traducciones Instantáneas con Transición Fade-Blur
+        const translations = {
+            "es": {
+                "nav-rooms": "Habitaciones", "nav-beach": "La Playa", "nav-terrace": "Terraza", "nav-location": "Entorno",
+                "hero-title": "Tu Casa Particular en Varadero, a 30m de la Playa",
+                "hero-desc": "Descubre el alojamiento perfecto. Renta de habitaciones independientes con WiFi, aire acondicionado y una espectacular terraza con vista al mar.",
+                "hero-btn": "Reservar Ahora",
+                "rooms-title": "Renta de Habitaciones Privadas",
+                "room1-title": "Habitación Principal",
+                "room1-desc": "Espaciosa e impecable. Cuenta con una cama matrimonial y una personal (capacidad 3 personas), baño privado y excelente iluminación.",
+                "room2-title": "Habitación Secundaria",
+                "room2-desc": "Acogedora, fresca e independiente. Cuenta con <strong>acceso directo a la exclusiva terraza</strong> y un diseño orientado a garantizar tu máximo confort tras un día de playa.",
+                "am-ac": "❄️ Aire Acondicionado Split", "am-bath": "🚿 Baño Privado (Agua Caliente)",
+                "am-safe": "🔒 Caja Fuerte y TV", "am-wifi": "📶 WiFi Disponible", "am-clean": "🧹 Limpieza Diaria",
+                "beach-title": "El Paraíso a 30 Metros",
+                "beach-desc": "Nuestra ubicación privilegiada te permite salir de la casa y en menos de un minuto estar pisando la arena blanca y cristalina de la mejor playa del mundo.",
+                "terrace-title": "Nuestra Exclusiva Terraza", "terrace-subtitle": "Vistas al Horizonte",
+                "terrace-desc": "Relájate en nuestra terraza en la azotea, un espacio amplio ideal para leer, tomar un café matutino o disfrutar de la suave brisa del mar. Sillas de descanso y sombra a tu disposición.",
+                "loc-title": "Zonas de Interés",
+                "surr-1": "Parador Fotográfico", "surr-2": "Opciones Gastronómicas", "surr-3": "Vista Exterior de la Casa",
+                "rev-title": "Experiencias de huéspedes",
+                "contact-title": "Reserva Tu Estancia",
+                "contact-desc": "Contáctanos directamente vía WhatsApp o Email para asegurar tu reservación de alojamiento con los mejores precios.",
+                "footer-address": "Dirección: Av. 1ra / 30 y 31 #3004, Varadero, Cuba", "footer-hosts": "Tus anfitriones: Frank y Mercy"
+            },
+            "en": {
+                "nav-rooms": "Rooms", "nav-beach": "The Beach", "nav-terrace": "Rooftop", "nav-location": "Nearby",
+                "hero-title": "Your Casa Particular, 30m from the Beach",
+                "hero-desc": "Discover the perfect stay. Rent independent rooms with WiFi, AC, and a spectacular ocean-view terrace.",
+                "hero-btn": "Book Now",
+                "rooms-title": "Private Room Rentals",
+                "room1-title": "Main Room",
+                "room1-desc": "Spacious and spotless. Features one double bed and one twin bed (capacity 3), private bathroom and great lighting.",
+                "room2-title": "Second Room",
+                "room2-desc": "Cozy, cool, and independent. Features <strong>direct access to our exclusive terrace</strong> and is designed to guarantee your maximum comfort after a beach day.",
+                "am-ac": "❄️ Split A/C", "am-bath": "🚿 Private Bath (Hot Water)",
+                "am-safe": "🔒 Safe & TV", "am-wifi": "📶 WiFi Available", "am-clean": "🧹 Daily Cleaning",
+                "beach-title": "Paradise just 30 Meters Away",
+                "beach-desc": "Our privileged location allows you to walk out the door and step onto the white, crystal-clear sands of the world's best beach in less than a minute.",
+                "terrace-title": "Our Exclusive Rooftop", "terrace-subtitle": "Horizon Views",
+                "terrace-desc": "Relax on our rooftop terrace, a spacious area perfect for reading, morning coffee, or enjoying the sea breeze. Lounge chairs and shade available.",
+                "loc-title": "Points of Interest",
+                "surr-1": "Varadero Photo Spot", "surr-2": "Dining Options", "surr-3": "Exterior View of the House",
+                "rev-title": "Guest Experiences",
+                "contact-title": "Book Your Stay",
+                "contact-desc": "Contact us directly via WhatsApp or Email to secure your accommodation booking with the best prices.",
+                "footer-address": "Address: 1st Ave / 30 & 31 #3004, Varadero, Cuba", "footer-hosts": "Your hosts: Frank and Mercy"
+            }
+        };
+
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            document.documentElement.lang = currentLang;
+            
+            const btn = document.getElementById('lang-btn');
+            btn.textContent = currentLang === 'es' ? 'EN' : 'ES';
+            
+            // Lógica UX: Aplicar opacidad y desenfoque antes de cambiar el texto
+            const elements = document.querySelectorAll('[data-i18n]');
+            
+            elements.forEach(el => {
+                el.classList.add('lang-anim', 'lang-anim-hidden');
+            });
+
+            // Esperar a que termine la animación (400ms) para inyectar texto y mostrar
+            setTimeout(() => {
+                elements.forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[currentLang][key]) {
+                        el.innerHTML = translations[currentLang][key];
+                    }
+                    el.classList.remove('lang-anim-hidden');
+                });
+            }, 400); 
+        }
+    </script>
+</body>
+</html>
